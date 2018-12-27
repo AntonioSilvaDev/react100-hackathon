@@ -25,25 +25,24 @@ class App extends Component {
       }
   
     clickHandler(){
-      let apiKey = "ZJLXK2A1FUQV";
+      var x = "ZJLXK2A1FUQV";
       let lmt = 15;
       let search_term = `${this.state.character} ${this.state.mood}`;
 
       axios
-          .get("https://random.dog/woof.json")
-          .then(response => response.data)
-          .then(woofs => this.setState({ woofs }));
+        .get("https://random.dog/woof.json")
+        .then(response => response.data)
+        .then(woofs => this.setState({ woofs }));
 
-          axios
-          .get("https://api.tenor.com/v1/search?tag=" + search_term + "&key=" + apiKey + "&limit=" + lmt)
-          .then(response => response.data.results)
-          .then(gifs => this.setState({ gifs }))
-          console.log(search_term);
+      axios
+        .get("https://api.tenor.com/v1/search?tag=" + search_term + "&key=" + x + "&limit=" + lmt)
+        .then(response => response.data.results)
+        .then(gifs => this.setState({ gifs }))
 
-          this.setState({
-            isClicked: true,
+        this.setState({
+          isClicked: true,
           })
-    }
+      }
   
   render() {
 
