@@ -25,9 +25,7 @@ class App extends Component {
       }
   
     clickHandler(){
-      var x = "ZJLXK2A1FUQV";
-      let lmt = 15;
-      let search_term = `${this.state.character} ${this.state.mood}`;
+      let search_term = `${this.state.mood} ${this.state.character}`;
 
       axios
         .get("https://random.dog/woof.json")
@@ -35,7 +33,7 @@ class App extends Component {
         .then(woofs => this.setState({ woofs }));
 
       axios
-        .get("https://api.tenor.com/v1/search?tag=" + search_term + "&key=" + x + "&limit=" + lmt)
+        .get('/api', {params: {searchTerm: search_term}})
         .then(response => response.data.results)
         .then(gifs => this.setState({ gifs }))
 

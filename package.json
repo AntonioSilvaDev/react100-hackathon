@@ -23,6 +23,7 @@
     "bluebird": "^3.5.0",
     "chai": "^3.5.0",
     "concurrently": "^4.1.0",
+    "dotenv": "^6.2.0",
     "expect": "^1.20.2",
     "express": "^4.16.4",
     "json-loader": "^0.5.4",
